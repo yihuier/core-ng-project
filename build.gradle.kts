@@ -4,6 +4,7 @@ plugins {
 }
 
 apply(plugin = "project")
+apply(plugin = "publish")
 
 subprojects {
     group = "core.framework"

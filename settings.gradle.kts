@@ -3,9 +3,12 @@ include("core-ng", "core-ng-test")
 include("core-ng-search", "core-ng-search-test")
 include("core-ng-mongo", "core-ng-mongo-test")
 
+include("yihuier-dependencies")
+
 include(
     "ext:log-processor",
     "ext:log-collector",
     "ext:log-exporter",
-    "ext:monitor"
+    "ext:monitor",
+    "ext:mongo-migration"
 )

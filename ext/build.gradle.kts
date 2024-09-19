@@ -37,3 +37,9 @@ project("monitor") {
         testImplementation(project(":core-ng-mongo-test"))
     }
 }
+
+project(":ext:mongo-migration") {
+    dependencies {
+        implementation(project(":core-ng-mongo"))
+    }
+}

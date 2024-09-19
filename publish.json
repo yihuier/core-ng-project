@@ -1,0 +1,44 @@
+{
+  "modules": [
+    {
+      "name": "core-ng",
+      "artifactId": "core-ng",
+      "version": "0.0.1"
+    },
+    {
+      "name": "core-ng-api",
+      "artifactId": "core-ng-api",
+      "version": "0.0.1"
+    },
+    {
+      "name": "core-ng-mongo",
+      "artifactId": "core-ng-mongo",
+      "version": "0.0.1"
+    },
+    {
+      "name": "core-ng-mongo-test",
+      "artifactId": "core-ng-mongo-test",
+      "version": "0.0.1"
+    },
+    {
+      "name": "core-ng-search",
+      "artifactId": "core-ng-search",
+      "version": "0.0.1"
+    },
+    {
+      "name": "core-ng-search-test",
+      "artifactId": "core-ng-search-test",
+      "version": "0.0.1"
+    },
+    {
+      "name": "core-ng-test",
+      "artifactId": "core-ng-test",
+      "version": "0.0.1"
+    },
+    {
+      "name": ":ext:mongo-migration",
+      "artifactId": "mongo-migration",
+      "version": "0.0.1"
+    }
+  ]
+}
