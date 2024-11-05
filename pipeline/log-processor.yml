@@ -1,0 +1,37 @@
+kind: pipeline
+type: kubernetes
+name: log-processor-pipeline
+
+steps:
+  - name: build
+    image: optimoz/openjdk-21.0.3:0.11
+    environment:
+      GITHUB_PACKAGES_ACCESSTOKEN:
+        from_secret: GITHUB_PACKAGES_ACCESSTOKEN
+    volumes:
+      - name: gradle-cache
+        path: /root/.gradle
+    commands:
+      - ./gradlew -p ext/log-processor check docker
+
+  - name: build-image
+    image: plugins/kaniko
+    settings:
+      registry: ccr.ccs.tencentyun.com
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOKCER_PASSWORD
+      repo: ccr.ccs.tencentyun.com/yihuier/log-processor
+      tags:
+        - v2
+      dockerfile: build/ext/log-processor/docker/Dockerfile
+      context: build/ext/log-processor/docker
+
+volumes:
+  - name: gradle-cache
+    claim:
+      name: gradle-pvc
+
+node_selector:
+  node: main
